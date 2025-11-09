@@ -33,15 +33,42 @@ Webアプリケーション設計・開発へ転向したいエンジニア。
 ---
 
 ## 🧰 こんな技術がつかえます - 技術スタック / Tech Stack
-|Category	| Technologies|
-|---|---|
-|Frontend |	TypeScript / Next.js / shadcn/ui |
-|Backend |	Supabase / Prisma / tRPC |
-|Infra |	Docker / GCP (Cloud Vision API) |
-|AI |	OpenAI API (Structured Extraction) |
-|DevOps	 |GitHub Actions / Bun Test |
-|Legacy Integration	| Kintone / SmartRead / VBA Automation|
+### 🧩 技術選定理由 / Technical Stack Rationale
+**Next.js／TypeScript 系**  
+> フロントとバックを分けない構成で、ドメインロジックを型で貫通させる。  
+> OSSのみで完結し、商用ライセンスに左右されない環境を維持できる。
 
+**Supabase**  
+> 学習段階ではまずRDBを扱うほうが設計の基礎をつかみやすいと考えた。  
+> 認証とデータベースを一体で扱えるため、実装面でも便利。
+
+**Zod／tRPC／Prisma**  
+> データスキーマを中心に、定義を一箇所に集約してAPI・DB・UIを連動させる。  
+> 「不整合を設計段階で潰す」思想を実装面で形にしている。
+
+**Effect-TS**  
+> 手続き的ロジックの混在を避け、業務処理を型と関数で構造化するために導入。  
+> 「例外を設計に取り込む」思想に共鳴している。
+
+**Rust**  
+> 安全性と抽象化の両立を低レイヤーで理解するための学習・設計研究用。  
+> 所有権モデルに設計としての美学を感じている。
+
+**Nuxt／Laravel**  
+> フレームワークの思想比較を目的として学習。  
+> 「宣言的UIの構成」と「OOP由来の責務分離」を対比し、設計感覚の幅を広げる実験として扱っている。
+
+### ⚙️ 主要技術構成 / Core Technologies
+| Category | Technologies |
+|---|---|
+| Frontend | TypeScript 5.8 / Next.js 15.2 / shadcn/ui |
+| Backend | Supabase / Prisma 6.5 / tRPC 11.1 |
+| Infra | Docker (Compose) / GCP (Cloud Vision API v1) |
+| AI | OpenAI API (GPT-4o, Structured Extraction)  |
+| DevOps | GitHub Actions / Bun 1.2.11 (Test) |
+| Legacy Integration | Kintone / SmartRead / VBA Automation |
+
+## 🌐 こんなコトができます - スキル構成図 / Skill Structure
 ```mermaid
 %%{init:{'theme':'base','themeVariables':{'primaryColor':'#6A7FAB','primaryTextColor':'#FAFBF9','primaryBorderColor':'#6A7FAB','lineColor':'#6A7FABCC','textColor':'#6A7FABCC','fontSize':'20px'}}}%%
 mindmap
